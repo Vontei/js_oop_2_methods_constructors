@@ -64,7 +64,7 @@ describe('#full', function() {
     expect(cab.full()).toEqual(true);
   });
 
-  xit('returns false when there are less passengers than there is space for passengers', function() {
+  it('returns false when there are less passengers than there is space for passengers', function() {
     expect(cab.full()).toBe(false);
   });
 });

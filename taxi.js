@@ -19,19 +19,19 @@ Taxi.prototype.passengerCount = function(passengerName){
 };
 
 Taxi.prototype.full = function(){
-  if(this.passengerCount == (this.maxNumberOfPassengers -1)){
-    return true;
+  if(this.passengers.length == this.maxNumberOfPassengers){
+    return true
   }
-  if(this.passengerCount < this.maxNumberOfPassengers){
-    return false;
+  if(this.passengers.length < this.maxNumberOfPassengers){
+    return false
   }
-}
+};
 
 
 Taxi.prototype.dropOffPassengers = function(){
   this.passengers = []
   return this.passengers
-}
+};
 
 // DO NOT MODIFY BELOW THIS COMMENT:
 module.exports = Taxi;
