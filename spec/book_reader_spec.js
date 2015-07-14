@@ -4,20 +4,21 @@ var exampleBook = ['any', 'array', 'of', 'text', 'is', 'a', 'book', 'to', 'us'],
     shortExampleBook = ['this', 'is', 'short'];;
 
 
+
 describe('properties', function() {
   var reader = new BookReader(exampleBook);
 
-  it('has an array book to store the book', function() {
+  xit('has an array book to store the book', function() {
     expect(reader.book).toEqual(exampleBook);
   });
 
-  it('has an integer currentPage to store the current page (index in book) the reader is on', function() {
+  xit('has an integer currentPage to store the current page (index in book) the reader is on', function() {
     expect(reader.currentPage).toEqual(0);
   });
 });
 
 describe('#nextPage', function() {
-  it('returns the next page that the reader should see', function() {
+  xit('returns the next page that the reader should see', function() {
     var reader = new BookReader(exampleBook);
     expect(reader.nextPage()).toEqual('array');
     expect(reader.currentPage).toEqual(1);
@@ -25,7 +26,7 @@ describe('#nextPage', function() {
     expect(reader.currentPage).toEqual(2);
   });
 
-  it('does not allow the user to turn beyond the last page of the book', function() {
+  xit('does not allow the user to turn beyond the last page of the book', function() {
     var reader = new BookReader(shortExampleBook);
     reader.nextPage();
 
@@ -36,7 +37,7 @@ describe('#nextPage', function() {
 });
 
 describe('#previousPage', function() {
-  it('returns the page prior to the one that the reader is currently on', function() {
+  xit('returns the page prior to the one that the reader is currently on', function() {
     var reader = new BookReader(exampleBook);
     reader.nextPage();
     reader.nextPage();
@@ -45,14 +46,14 @@ describe('#previousPage', function() {
     expect(reader.currentPage).toEqual(1);
   });
 
-  it('does not allow the user to turn back beyond the first page of the book', function() {
+  xit('does not allow the user to turn back beyond the first page of the book', function() {
     var reader = new BookReader(exampleBook);
     expect(reader.previousPage()).toEqual('any');
   });
 });
 
 describe('#pagesLeft', function() {
-  it('returns the next number of pages the reader has left', function() {
+  xit('returns the next number of pages the reader has left', function() {
     var reader = new BookReader(exampleBook);
     reader.nextPage();
     reader.nextPage();
@@ -62,13 +63,13 @@ describe('#pagesLeft', function() {
 });
 
 describe('#encouragement', function() {
-  it('returns a String of encouragement for the reader', function() {
+  xit('returns a String of encouragement for the reader', function() {
     var reader = new BookReader(shortExampleBook);
 
     expect(reader.encouragement()).toEqual("Keep going, only 2 pages left after this one!");
   });
 
-  it('returns an extra special String of encouragement for the reader when they are on the last page', function() {
+  xit('returns an extra special String of encouragement for the reader when they are on the last page', function() {
     var reader = new BookReader(shortExampleBook);
     reader.nextPage();
 
